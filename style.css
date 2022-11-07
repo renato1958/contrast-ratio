@@ -201,4 +201,17 @@
   text-align: center;
   line-height: 30px;
   flex: 50px 0 0;
+  border-radius: 5px;
+}
+
+.page-footer {
+  margin-top: 20px;
+  background-color: black;
+  padding: 8px 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.love {
+  color: red;
 }
