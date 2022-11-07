@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - contrast-ratio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="position-context">
+    <div class="swatch-container">
+      <div class="swatch swatch-foreground">
+        <p class="big">ABC</p>
+        <p class="small">abc</p>
+      </div>
+      <div class="swatch swatch-background"></div>
+      <div class="swatch swatch-stats"></div>      
+    </div><!-- .swatch-container -->
+  </div><!-- .position-context -->
+  
+  <div class="control-els control-els--top">
+    <div class="title-controls-container">
+      <h3 class="title__controls">Colore Testo (RGB)</h3>
+      <span class="expand-button">-</span>      
+    </div>
+    
+    <div class="colors-container colors-container--open">
+      <div class="color-container">
+        <div class="color-label color-label--red">R</div>
+        <input type="range" class="slider slider__foreground--red" min="0" max="255" value="0" step="1">
+        <div class="color-value color-value__foreground--red">0</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--green">G</div>
+        <input type="range" class="slider slider__foreground--green" min="0" max="255" value="0" step="1">
+        <div class="color-value color-value__foreground--green">0</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--blue">B</div>
+        <input type="range" class="slider slider__foreground--blue" min="0" max="255" value="0" step="1">
+        <div class="color-value color-value__foreground--blue">0</div>
+      </div>      
+    </div>
+  </div><!-- .control-els -->
+  
+  <div class="control-els">
+    <div class="title-controls-container">
+      <h3 class="title__controls">Colore Sfondo (RGB)</h3>
+      <span class="expand-button">-</span>
+    </div>
+    
+    <div class="colors-container colors-container--open">
+      <div class="color-container">
+        <div class="color-label color-label--red">R</div>
+        <input type="range" class="slider slider__background--red" min="0" max="255" value="255" step="1">
+        <div class="color-value color-value__background--red">255</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--green">G</div>
+        <input type="range" class="slider slider__background--green" min="0" max="255" value="255" step="1">
+        <div class="color-value color-value__background--green">255</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--blue">B</div>
+        <input type="range" class="slider slider__background--blue" min="0" max="255" value="255" step="1">
+        <div class="color-value color-value__background--blue">255</div>
+      </div>
+    </div>
+  </div><!-- .control-els -->
+
+<div class="control-els">
+    <div class="title-controls-container">
+      <h3 class="title__controls">Colore Testo (HSL)</h3>
+      <span class="expand-button">-</span>
+    </div>
+  
+    <div class="colors-container colors-container--open">
+      <div class="color-container">
+        <div class="color-label color-label--hsl">H</div>
+        <input type="range" class="slider slider__foreground--hue" min="0" max="359" value="0" step="1">
+        <div class="color-value color-value__foreground--hue">0°</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--hsl">S</div>
+        <input type="range" class="slider slider__foreground--saturation" min="0" max="100" value="0" step="1">
+        <div class="color-value color-value__foreground--saturation">0%</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--hsl">L</div>
+        <input type="range" class="slider slider__foreground--luminance" min="0" max="100" value="0" step="1">
+        <div class="color-value color-value__foreground--luminance">0%</div>
+      </div>
+    </div>
+  </div><!-- .control-els -->
+  
+  <div class="control-els">
+    <div class="title-controls-container">
+      <h3 class="title__controls">Colore Sfondo (HSL)</h3>
+      <span class="expand-button">-</span>
+    </div>
+    
+    <div class="colors-container colors-container--open">
+      <div class="color-container">
+        <div class="color-label color-label--hsl">H</div>
+        <input type="range" class="slider slider__background--hue" min="0" max="359" value="0" step="1">
+        <div class="color-value color-value__background--hue">0°</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--hsl">S</div>
+        <input type="range" class="slider slider__background--saturation" min="0" max="100" value="0" step="1">
+        <div class="color-value color-value__background--saturation">0%</div>
+      </div>
+
+      <div class="color-container">
+        <div class="color-label color-label--hsl">L</div>
+        <input type="range" class="slider slider__background--luminance" min="0" max="100" value="100" step="1">
+        <div class="color-value color-value__background--luminance">100%</div>
+      </div>
+    </div>
+  </div><!-- .control-els -->
+</div><!-- .wrapper -->
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
