@@ -345,6 +345,7 @@ function rgb2hsl(r, g, b) {
 /*
 */
 function hsl2rgb(h, s, l) {
+  if(h == 360) h = 0;
   s /= 100;
   l /= 100;
 
