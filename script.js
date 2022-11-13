@@ -40,10 +40,12 @@ const controlElsTop = document.querySelector('.control-els--top');
 for (let i = 0; i < 4; i++) {
   expandButton[i].addEventListener('click', () => {
     if (colorsContainer[i].classList.contains('colors-container--closed')) {
-      expandButton[i].innerHTML = '-';
+      expandButton[i].classList.replace('fa-angle-down', 'fa-angle-up');
+      //expandButton[i].innerHTML = '-';
       colorsContainer[i].classList.replace('colors-container--closed', 'colors-container--open');
     } else {
-      expandButton[i].innerHTML = '+';
+      expandButton[i].classList.replace('fa-angle-up', 'fa-angle-down');
+      //expandButton[i].innerHTML = '+';
       colorsContainer[i].classList.replace('colors-container--open', 'colors-container--closed');
     }
   });
