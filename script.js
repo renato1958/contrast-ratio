@@ -37,7 +37,7 @@ const swatchStats = document.querySelector('.swatch-stats');
 
 const controlElsTop = document.querySelector('.control-els--top');
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < expandButton.length; i++) {
   expandButton[i].addEventListener('click', () => {
     if (colorsContainer[i].classList.contains('colors-container--closed')) {
       expandButton[i].classList.replace('fa-angle-down', 'fa-angle-up');
