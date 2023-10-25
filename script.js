@@ -261,17 +261,26 @@ sliderBackgroundHue.addEventListener('input', () => {
   swatchBackground.style.backgroundColor = `hsl(${sliderBackgroundHue.value}, ${sliderBackgroundSaturation.value}%, ${sliderBackgroundLuminance.value}%)`;
   colorValueBackgroundHue.innerHTML = sliderBackgroundHue.value + '°';
 
+  
+
   let dynamicColorArray = getDynamicColorArray();
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
   console.log(r, g, b); // DEBUG
-  sliderBackgroundRed.value = r;
-  sliderBackgroundGreen.value = g;
-  sliderBackgroundBlue.value = b;
-  colorValueBackgroundRed.innerHTML = r;
-  colorValueBackgroundGreen.innerHTML = g;
-  colorValueBackgroundBlue.innerHTML = b;
+  sliderBackgroundRgbRed.value = r;
+  sliderBackgroundRgbGreen.value = g;
+  sliderBackgroundRgbBlue.value = b;
+  colorValueBackgroundRgbRed.innerHTML = r;
+  colorValueBackgroundRgbGreen.innerHTML = g;
+  colorValueBackgroundRgbBlue.innerHTML = b;
+
+  sliderBackgroundHexRed.value = r;
+  sliderBackgroundHexGreen.value = g;
+  sliderBackgroundHexBlue.value = b;
+  colorValueBackgroundHexRed.innerHTML = r.toString(16).toUpperCase().padStart(2, "0");
+  colorValueBackgroundHexGreen.innerHTML = g.toString(16).toUpperCase().padStart(2, "0");
+  colorValueBackgroundHexBlue.innerHTML = b.toString(16).toUpperCase().padStart(2, "0");  
 });
 
 sliderBackgroundSaturation.addEventListener('input', () => {
