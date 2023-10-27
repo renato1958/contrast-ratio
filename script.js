@@ -193,7 +193,6 @@ sliderForegroundHue.addEventListener('input', () => {
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderForegroundHue.value, sliderForegroundSaturation.value, sliderForegroundLuminance.value);
-  console.log(r, g, b); // DEBUG
   sliderForegroundRgbRed.value = r;
   sliderForegroundRgbGreen.value = g;
   sliderForegroundRgbBlue.value = b;
@@ -217,7 +216,6 @@ sliderForegroundSaturation.addEventListener('input', () => {
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderForegroundHue.value, sliderForegroundSaturation.value, sliderForegroundLuminance.value);
-  console.log(r, g, b); // DEBUG
   sliderForegroundRgbRed.value = r;
   sliderForegroundRgbGreen.value = g;
   sliderForegroundRgbBlue.value = b;
@@ -241,7 +239,6 @@ sliderForegroundLuminance.addEventListener('input', () => {
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderForegroundHue.value, sliderForegroundSaturation.value, sliderForegroundLuminance.value);
-  console.log(r, g, b); // DEBUG
   sliderForegroundRgbRed.value = r;
   sliderForegroundRgbGreen.value = g;
   sliderForegroundRgbBlue.value = b;
@@ -267,7 +264,6 @@ sliderBackgroundHue.addEventListener('input', () => {
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
-  console.log(r, g, b); // DEBUG
   sliderBackgroundRgbRed.value = r;
   sliderBackgroundRgbGreen.value = g;
   sliderBackgroundRgbBlue.value = b;
@@ -291,13 +287,20 @@ sliderBackgroundSaturation.addEventListener('input', () => {
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
-  console.log(r, g, b); // DEBUG
-  sliderBackgroundRed.value = r;
-  sliderBackgroundGreen.value = g;
-  sliderBackgroundBlue.value = b;
-  colorValueBackgroundRed.innerHTML = r;
-  colorValueBackgroundGreen.innerHTML = g;
-  colorValueBackgroundBlue.innerHTML = b;
+
+  sliderBackgroundRgbRed.value = r;
+  sliderBackgroundRgbGreen.value = g;
+  sliderBackgroundRgbBlue.value = b;
+  colorValueBackgroundRgbRed.innerHTML = r;
+  colorValueBackgroundRgbGreen.innerHTML = g;
+  colorValueBackgroundRgbBlue.innerHTML = b;
+
+  sliderBackgroundHexRed.value = r;
+  sliderBackgroundHexGreen.value = g;
+  sliderBackgroundHexBlue.value = b;
+  colorValueBackgroundHexRed.innerHTML = r;
+  colorValueBackgroundHexGreen.innerHTML = g;
+  colorValueBackgroundHexBlue.innerHTML = b;
 });
 
 sliderBackgroundLuminance.addEventListener('input', () => {
@@ -308,13 +311,128 @@ sliderBackgroundLuminance.addEventListener('input', () => {
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
-  console.log(r, g, b); // DEBUG
-  sliderBackgroundRed.value = r;
-  sliderBackgroundGreen.value = g;
-  sliderBackgroundBlue.value = b;
-  colorValueBackgroundRed.innerHTML = r;
-  colorValueBackgroundGreen.innerHTML = g;
-  colorValueBackgroundBlue.innerHTML = b;
+
+  sliderBackgroundRgbRed.value = r;
+  sliderBackgroundRgbGreen.value = g;
+  sliderBackgroundRgbBlue.value = b;
+  colorValueBackgroundRgbRed.innerHTML = r;
+  colorValueBackgroundRgbGreen.innerHTML = g;
+  colorValueBackgroundRgbBlue.innerHTML = b;
+
+  sliderBackgroundHexRed.value = r;
+  sliderBackgroundHexGreen.value = g;
+  sliderBackgroundHexBlue.value = b;
+  colorValueBackgroundHexRed.innerHTML = r;
+  colorValueBackgroundHexGreen.innerHTML = g;
+  colorValueBackgroundHexBlue.innerHTML = b;
+});
+
+sliderForegroundHexRed.addEventListener('input', () => {
+  swatchForeground.style.color = `rgb(${sliderForegroundHexRed.value}, ${sliderForegroundHexGreen.value}, ${sliderForegroundHexBlue.value}`;
+  colorValueForegroundHexRed.innerHTML = Number(sliderForegroundHexRed.value).toString(16).toUpperCase().padStart(2, "0");
+  sliderForegroundRgbRed.value = sliderForegroundHexRed.value;
+  colorValueForegroundRgbRed.innerHTML = sliderForegroundHexRed.value;
+
+  let dynamicColorArray = getDynamicColorArray();
+  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+
+  let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
+  sliderForegroundHue.value = h;
+  sliderForegroundSaturation.value = s;
+  sliderForegroundLuminance.value = l;
+  colorValueForegroundHue.innerHTML = h + '°';
+  colorValueForegroundSaturation.innerHTML = s + '%';
+  colorValueForegroundLuminance.innerHTML = l + '%';
+});
+
+sliderForegroundHexGreen.addEventListener('input', () => {
+  swatchForeground.style.color = `rgb(${sliderForegroundHexRed.value}, ${sliderForegroundHexGreen.value}, ${sliderForegroundHexBlue.value}`;
+  colorValueForegroundHexGreen.innerHTML = Number(sliderForegroundHexGreen.value).toString(16).toUpperCase().padStart(2, "0");
+  sliderForegroundRgbGreen.value = sliderForegroundHexGreen.value;
+  colorValueForegroundRgbGreen.innerHTML = sliderForegroundHexGreen.value;
+
+  let dynamicColorArray = getDynamicColorArray();
+  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+
+  let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
+  sliderForegroundHue.value = h;
+  sliderForegroundSaturation.value = s;
+  sliderForegroundLuminance.value = l;
+  colorValueForegroundHue.innerHTML = h + '°';
+  colorValueForegroundSaturation.innerHTML = s + '%';
+  colorValueForegroundLuminance.innerHTML = l + '%';
+});
+
+sliderForegroundHexBlue.addEventListener('input', () => {
+  swatchForeground.style.color = `rgb(${sliderForegroundHexRed.value}, ${sliderForegroundHexGreen.value}, ${sliderForegroundHexBlue.value}`;
+  colorValueForegroundHexBlue.innerHTML = Number(sliderForegroundHexBlue.value).toString(16).toUpperCase().padStart(2, "0");
+  sliderForegroundRgbBlue.value = sliderForegroundHexBlue.value;
+  colorValueForegroundRgbBlue.innerHTML = sliderForegroundHexBlue.value;
+
+  let dynamicColorArray = getDynamicColorArray();
+  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+
+  let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
+  sliderForegroundHue.value = h;
+  sliderForegroundSaturation.value = s;
+  sliderForegroundLuminance.value = l;
+  colorValueForegroundHue.innerHTML = h + '°';
+  colorValueForegroundSaturation.innerHTML = s + '%';
+  colorValueForegroundLuminance.innerHTML = l + '%';
+});
+
+sliderBackgroundHexRed.addEventListener('input', () => {
+  swatchBackground.style.backgroundColor = `rgb(${sliderBackgroundHexRed.value}, ${sliderBackgroundHexGreen.value}, ${sliderBackgroundHexBlue.value}`;
+  colorValueBackgroundHexRed.innerHTML = Number(sliderBackgroundHexRed.value).toString(16).toUpperCase().padStart(2, "0");
+  sliderBackgroundRgbRed.value = sliderBackgroundHexRed.value;
+  colorValueBackgroundRgbRed.innerHTML = sliderBackgroundHexRed.value;
+
+  let dynamicColorArray = getDynamicColorArray();
+  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+
+  let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
+  sliderBackgroundHue.value = h;
+  sliderBackgroundSaturation.value = s;
+  sliderBackgroundLuminance.value = l;
+  colorValueBackgroundHue.innerHTML = h + '°';
+  colorValueBackgroundSaturation.innerHTML = s + '%';
+  colorValueBackgroundLuminance.innerHTML = l + '%';
+});
+
+sliderBackgroundHexGreen.addEventListener('input', () => {
+  swatchBackground.style.backgroundColor = `rgb(${sliderBackgroundHexRed.value}, ${sliderBackgroundHexGreen.value}, ${sliderBackgroundHexBlue.value}`;
+  colorValueBackgroundHexGreen.innerHTML = Number(sliderBackgroundHexGreen.value).toString(16).toUpperCase().padStart(2, "0");
+  sliderBackgroundRgbGreen.value = sliderBackgroundHexGreen.value;
+  colorValueBackgroundRgbGreen.innerHTML = sliderBackgroundHexGreen.value;
+
+  let dynamicColorArray = getDynamicColorArray();
+  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+
+  let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
+  sliderBackgroundHue.value = h;
+  sliderBackgroundSaturation.value = s;
+  sliderBackgroundLuminance.value = l;
+  colorValueBackgroundHue.innerHTML = h + '°';
+  colorValueBackgroundSaturation.innerHTML = s + '%';
+  colorValueBackgroundLuminance.innerHTML = l + '%';
+});
+
+sliderBackgroundHexBlue.addEventListener('input', () => {
+  swatchBackground.style.backgroundColor = `rgb(${sliderBackgroundHexRed.value}, ${sliderBackgroundHexGreen.value}, ${sliderBackgroundHexBlue.value}`;
+  colorValueBackgroundHexBlue.innerHTML = Number(sliderBackgroundHexBlue.value).toString(16).toUpperCase().padStart(2, "0");
+  sliderBackgroundRgbBlue.value = sliderBackgroundHexBlue.value;
+  colorValueBackgroundRgbBlue.innerHTML = sliderBackgroundHexBlue.value;
+
+  let dynamicColorArray = getDynamicColorArray();
+  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+
+  let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
+  sliderBackgroundHue.value = h;
+  sliderBackgroundSaturation.value = s;
+  sliderBackgroundLuminance.value = l;
+  colorValueBackgroundHue.innerHTML = h + '°';
+  colorValueBackgroundSaturation.innerHTML = s + '%';
+  colorValueBackgroundLuminance.innerHTML = l + '%';
 });
 
 // FUNCTIONS
