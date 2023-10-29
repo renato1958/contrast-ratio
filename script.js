@@ -256,14 +256,13 @@ sliderForegroundLuminance.addEventListener('input', () => {
 
 sliderBackgroundHue.addEventListener('input', () => {
   swatchBackground.style.backgroundColor = `hsl(${sliderBackgroundHue.value}, ${sliderBackgroundSaturation.value}%, ${sliderBackgroundLuminance.value}%)`;
-  colorValueBackgroundHue.innerHTML = sliderBackgroundHue.value + '°';
-
-  
+  colorValueBackgroundHue.innerHTML = sliderBackgroundHue.value + '°';  
 
   let dynamicColorArray = getDynamicColorArray();
   swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
+
   sliderBackgroundRgbRed.value = r;
   sliderBackgroundRgbGreen.value = g;
   sliderBackgroundRgbBlue.value = b;
@@ -298,9 +297,9 @@ sliderBackgroundSaturation.addEventListener('input', () => {
   sliderBackgroundHexRed.value = r;
   sliderBackgroundHexGreen.value = g;
   sliderBackgroundHexBlue.value = b;
-  colorValueBackgroundHexRed.innerHTML = r;
-  colorValueBackgroundHexGreen.innerHTML = g;
-  colorValueBackgroundHexBlue.innerHTML = b;
+  colorValueBackgroundHexRed.innerHTML = r.toString(16).toUpperCase().padStart(2, "0");
+  colorValueBackgroundHexGreen.innerHTML = g.toString(16).toUpperCase().padStart(2, "0");
+  colorValueBackgroundHexBlue.innerHTML = b.toString(16).toUpperCase().padStart(2, "0");  
 });
 
 sliderBackgroundLuminance.addEventListener('input', () => {
@@ -322,9 +321,9 @@ sliderBackgroundLuminance.addEventListener('input', () => {
   sliderBackgroundHexRed.value = r;
   sliderBackgroundHexGreen.value = g;
   sliderBackgroundHexBlue.value = b;
-  colorValueBackgroundHexRed.innerHTML = r;
-  colorValueBackgroundHexGreen.innerHTML = g;
-  colorValueBackgroundHexBlue.innerHTML = b;
+  colorValueBackgroundHexRed.innerHTML = r.toString(16).toUpperCase().padStart(2, "0");
+  colorValueBackgroundHexGreen.innerHTML = g.toString(16).toUpperCase().padStart(2, "0");
+  colorValueBackgroundHexBlue.innerHTML = b.toString(16).toUpperCase().padStart(2, "0");  
 });
 
 sliderForegroundHexRed.addEventListener('input', () => {
