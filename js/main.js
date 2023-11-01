@@ -1,5 +1,9 @@
 import { getDynamicColorArray, getContrastRatio, rgb2hsl, hsl2rgb } from "./functions.js";
 
+const finalYearSpan = document.querySelector(".anno-finale");
+const finalYear = new Date().getFullYear();
+finalYearSpan.innerText = finalYear;
+
 const positionContext = document.querySelector('.position-context');
 
 const expandButton = document.querySelectorAll('.expand-button');
