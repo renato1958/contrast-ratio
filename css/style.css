@@ -150,6 +150,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center; /* FIREFOX */
   margin-bottom: 5px;
 }
 
@@ -198,17 +199,14 @@ body {
 }
 
 .slider {
-  /* riferirsi a https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/ */
-  width: 75%;
   flex: 75% 0 1;
-  
-  /* Istruzioni aggiunte */
   -webkit-appearance: none;
+  height: 16px; /* FIREFOX */
   appearance: none;
   cursor: pointer;
   outline: none;
-  overflow: hidden;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .slider::-webkit-slider-runnable-track {
@@ -221,6 +219,7 @@ body {
   height: 15px;
   background: #ccc;
   border-radius: 16px;
+  overflow: hidden;
 }
 
 .slider::-webkit-slider-thumb {
@@ -231,7 +230,17 @@ body {
   background-color: #fff;
   border-radius: 50%;
   border: 2px solid #f50;
-  box-shadow: -407px 0 0 400px #f50
+  box-shadow: -1007px 0 0 1000px #f50
+}
+
+.slider::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #f50;
+  box-shadow: -1007px 0 0 1000px #f50;
+  overflow: hidden;
 }
 
 .color-value {
