@@ -12,7 +12,8 @@ const APP_STATIC_RESOURCES = [
     "/assets/favicons/favicon-16x16.png",
     "/assets/favicons/favicon-32x32.png",
     "/assets/favicons/favicon.ico",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
 ];
 
 self.addEventListener("install", e => {
