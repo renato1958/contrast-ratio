@@ -1,4 +1,4 @@
-const VERSION = "v2";
+const VERSION = "v3";
 const CACHE_NAME = `contrast-ratio-${VERSION}`;
 const APP_STATIC_RESOURCES = [
     "/",
@@ -12,8 +12,9 @@ const APP_STATIC_RESOURCES = [
     "/assets/favicons/favicon-16x16.png",
     "/assets/favicons/favicon-32x32.png",
     "/assets/favicons/favicon.ico",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
+    "/assets/fontawesome/solid.min.js",
+    "/assets/fontawesome/fontawesome.min.js"
 ];
 
 self.addEventListener("install", e => {
