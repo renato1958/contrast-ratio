@@ -54,9 +54,11 @@ self.addEventListener("fetch", e => {
             const cachedResponse = await cache.match(e.request.url);
             if(cachedResponse) {
                 return cachedResponse;
+            } else {
+                const fetchResponse = await fetch(e.request.url);
+                cache.put(e.request.url, fetchResponse.clone());
+                return fetchResponse;
             }
-
-            return new Response(null, { status: 404 });
         })(),
     );
 });
