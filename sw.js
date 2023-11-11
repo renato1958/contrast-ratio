@@ -1,20 +1,20 @@
-const VERSION = "v3";
+const VERSION = "v1";
 const CACHE_NAME = `contrast-ratio-${VERSION}`;
 const APP_STATIC_RESOURCES = [
-    "/",
-    "/index.html",
-    "/css/style.css",
-    "/js/main.js",
-    "/js/functions.js",
-    "/assets/favicons/android-chrome-192x192.png",
-    "/assets/favicons/android-chrome-512x512.png",
-    "/assets/favicons/apple-touch-icon.png",
-    "/assets/favicons/favicon-16x16.png",
-    "/assets/favicons/favicon-32x32.png",
-    "/assets/favicons/favicon.ico",
+    "./",
+    "./index.html",
+    "./css/style.css",
+    "./js/main.js",
+    "./js/functions.js",
+    "./assets/favicons/android-chrome-192x192.png",
+    "./assets/favicons/android-chrome-512x512.png",
+    "./assets/favicons/apple-touch-icon.png",
+    "./assets/favicons/favicon-16x16.png",
+    "./assets/favicons/favicon-32x32.png",
+    "./assets/favicons/favicon.ico",
     "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
-    "/assets/fontawesome/solid.min.js",
-    "/assets/fontawesome/fontawesome.min.js"
+    "./assets/fontawesome/solid.min.js",
+    "./assets/fontawesome/fontawesome.min.js"
 ];
 
 self.addEventListener("install", e => {
@@ -44,7 +44,7 @@ self.addEventListener("activate", e => {
 
 self.addEventListener("fetch", e => {
     if(e.request.mode === "navigate") {
-        e.respondWith(caches.match("/"));
+        e.respondWith(caches.match("./"));
         return;
     }
 
