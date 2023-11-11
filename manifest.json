@@ -34,8 +34,7 @@
     "display":"standalone",
     "dir": "ltr",
     "lang": "it_IT",
-    "orientation": "any",
-    "start_url": "/index.html",
-    "description": "App per il calcolo del rapporto di contrasto partendo da diversi spazi colore",
-    "id": "/?webapp=1"
+    "orientation": "portrait",
+    "start_url": "./",
+    "description": "App per il calcolo del rapporto di contrasto partendo da diversi spazi colore"
 }
