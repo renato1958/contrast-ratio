@@ -1,4 +1,4 @@
-const VERSION = "v20";
+const VERSION = "v1";
 const CACHE_NAME = `contrast-ratio-${VERSION}`;
 const APP_STATIC_RESOURCES = [
     "./",
