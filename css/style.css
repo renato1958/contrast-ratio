@@ -92,12 +92,12 @@ body {
 
 .cr-label {
   color: #989898;
-  font-size: 2rem;
+  font-size: clamp(1rem, 0.9rem + 1.75vw, 2rem);
 }
 
 .cr-value {
   color: #565758;
-  font-size: 3rem;
+  font-size: clamp(1.25rem, 1.3rem + 1.75vw, 3rem);
 }
 
 .control-els {
