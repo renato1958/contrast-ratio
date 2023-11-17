@@ -53,7 +53,8 @@ const colorValueBackgroundHexBlue = document.querySelector('.color-value__backgr
 
 export const swatchForeground = document.querySelector('.swatch-foreground');
 export const swatchBackground = document.querySelector('.swatch-background');
-const swatchStats = document.querySelector('.swatch-stats');
+
+const crValue = document.querySelector(".cr-value");
 
 const controlElsTop = document.querySelector('.control-els--top');
 
@@ -70,8 +71,6 @@ for (let i = 0; i < expandButton.length; i++) {
     }
   });
 }
-
-swatchStats.innerHTML = '<p class="cr-label">Contrast-Ratio</p><p class="cr-value">21.000</p>';
 
 window.addEventListener('load', () => {
   positionContext.style.height = getComputedStyle(swatchForeground).width;
@@ -90,7 +89,7 @@ sliderForegroundRgbRed.addEventListener('input', () => {
   colorValueForegroundHexRed.innerHTML = Number(sliderForegroundRgbRed.value).toString(16).toUpperCase().padStart(2, "0");
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
   sliderForegroundHue.value = h;
@@ -108,7 +107,7 @@ sliderForegroundRgbGreen.addEventListener('input', () => {
   colorValueForegroundHexGreen.innerHTML = Number(sliderForegroundRgbGreen.value).toString(16).toUpperCase().padStart(2, "0");
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
   sliderForegroundHue.value = h;
@@ -126,7 +125,7 @@ sliderForegroundRgbBlue.addEventListener('input', () => {
   colorValueForegroundHexBlue.innerHTML = Number(sliderForegroundRgbBlue.value).toString(16).toUpperCase().padStart(2, "0");
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
   sliderForegroundHue.value = h;
@@ -144,7 +143,7 @@ sliderBackgroundRgbRed.addEventListener('input', () => {
   colorValueBackgroundHexRed.innerHTML = Number(sliderBackgroundRgbRed.value).toString(16).toUpperCase().padStart(2, "0");
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
   sliderBackgroundHue.value = h;
@@ -162,7 +161,7 @@ sliderBackgroundRgbGreen.addEventListener('input', () => {
   colorValueBackgroundHexGreen.innerHTML = Number(sliderBackgroundRgbGreen.value).toString(16).toUpperCase().padStart(2, "0");
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
   sliderBackgroundHue.value = h;
@@ -180,7 +179,7 @@ sliderBackgroundRgbBlue.addEventListener('input', () => {
   colorValueBackgroundHexBlue.innerHTML = Number(sliderBackgroundRgbBlue.value).toString(16).toUpperCase().padStart(2, "0");
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
   sliderBackgroundHue.value = h;
@@ -196,7 +195,7 @@ sliderForegroundHue.addEventListener('input', () => {
   colorValueForegroundHue.innerHTML = sliderForegroundHue.value + '°';
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [r, g, b] = hsl2rgb(sliderForegroundHue.value, sliderForegroundSaturation.value, sliderForegroundLuminance.value);
   sliderForegroundRgbRed.value = r;
@@ -219,7 +218,7 @@ sliderForegroundSaturation.addEventListener('input', () => {
   colorValueForegroundSaturation.innerHTML = sliderForegroundSaturation.value + '°';
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [r, g, b] = hsl2rgb(sliderForegroundHue.value, sliderForegroundSaturation.value, sliderForegroundLuminance.value);
   sliderForegroundRgbRed.value = r;
@@ -242,7 +241,7 @@ sliderForegroundLuminance.addEventListener('input', () => {
   colorValueForegroundLuminance.innerHTML = sliderForegroundLuminance.value + '°';
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [r, g, b] = hsl2rgb(sliderForegroundHue.value, sliderForegroundSaturation.value, sliderForegroundLuminance.value);
   sliderForegroundRgbRed.value = r;
@@ -265,7 +264,7 @@ sliderBackgroundHue.addEventListener('input', () => {
   colorValueBackgroundHue.innerHTML = sliderBackgroundHue.value + '°';  
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
 
@@ -289,7 +288,7 @@ sliderBackgroundSaturation.addEventListener('input', () => {
   colorValueBackgroundSaturation.innerHTML = sliderBackgroundSaturation.value + '%';
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
 
@@ -313,7 +312,7 @@ sliderBackgroundLuminance.addEventListener('input', () => {
   colorValueBackgroundLuminance.innerHTML = sliderBackgroundLuminance.value + '%';
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [r, g, b] = hsl2rgb(sliderBackgroundHue.value, sliderBackgroundSaturation.value, sliderBackgroundLuminance.value);
 
@@ -339,7 +338,7 @@ sliderForegroundHexRed.addEventListener('input', () => {
   colorValueForegroundRgbRed.innerHTML = sliderForegroundHexRed.value;
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
   sliderForegroundHue.value = h;
@@ -357,7 +356,7 @@ sliderForegroundHexGreen.addEventListener('input', () => {
   colorValueForegroundRgbGreen.innerHTML = sliderForegroundHexGreen.value;
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
   sliderForegroundHue.value = h;
@@ -375,7 +374,7 @@ sliderForegroundHexBlue.addEventListener('input', () => {
   colorValueForegroundRgbBlue.innerHTML = sliderForegroundHexBlue.value;
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[0]);
   sliderForegroundHue.value = h;
@@ -393,7 +392,7 @@ sliderBackgroundHexRed.addEventListener('input', () => {
   colorValueBackgroundRgbRed.innerHTML = sliderBackgroundHexRed.value;
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
   sliderBackgroundHue.value = h;
@@ -411,7 +410,7 @@ sliderBackgroundHexGreen.addEventListener('input', () => {
   colorValueBackgroundRgbGreen.innerHTML = sliderBackgroundHexGreen.value;
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
   sliderBackgroundHue.value = h;
@@ -429,7 +428,7 @@ sliderBackgroundHexBlue.addEventListener('input', () => {
   colorValueBackgroundRgbBlue.innerHTML = sliderBackgroundHexBlue.value;
 
   let dynamicColorArray = getDynamicColorArray();
-  swatchStats.innerHTML = `<p class="cr-label">Contrast-Ratio</p><p class="cr-value">${getContrastRatio(...dynamicColorArray)}</p>`;
+  crValue.innerText = `${getContrastRatio(...dynamicColorArray)} : 1`;
 
   let [h, s, l] = rgb2hsl(...dynamicColorArray[1]);
   sliderBackgroundHue.value = h;
