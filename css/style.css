@@ -91,7 +91,7 @@ body {
 }
 
 .cr-label {
-  color: #989898;
+  color: #878787;
   font-size: clamp(1rem, 0.9rem + 1.75vw, 2rem);
 }
 
