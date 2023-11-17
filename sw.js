@@ -15,8 +15,6 @@ const APP_STATIC_RESOURCES = [
     "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css",
     "./assets/fontawesome/css/fontawesome.min.css",
     "./assets/fontawesome/css/solid.min.css",
-    "./assets/fontawesome/css/fontawesome.css",
-    "./assets/fontawesome/css/solid.css",
     "./assets/fontawesome/webfonts/fa-solid-900.ttf",
     "./assets/fontawesome/webfonts/fa-solid-900.woff2"
 ];
