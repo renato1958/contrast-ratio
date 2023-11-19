@@ -7,6 +7,10 @@ finalYearSpan.innerText = finalYear;
 const positionContext = document.querySelector('.position-context');
 
 const expandButton = document.querySelectorAll('.expand-button');
+
+const infoButton = document.querySelector(".info-button");
+const overlay = document.querySelector(".overlay");
+
 const colorsContainer = document.querySelectorAll('.colors-container');
 
 const sliderForegroundRgbRed = document.querySelector('.slider__foreground__rgb--red');
@@ -439,3 +443,6 @@ sliderBackgroundHexBlue.addEventListener('input', () => {
   colorValueBackgroundLuminance.innerHTML = l + '%';
 });
 
+infoButton.addEventListener("click", () => {
+  overlay.classList.add("active");
+})
