@@ -11,6 +11,7 @@ const expandButton = document.querySelectorAll('.expand-button');
 const infoButton = document.querySelector(".info-button");
 const closeButton = document.querySelector(".close-button");
 const overlay = document.querySelector(".overlay");
+const contrastRatioPar = document.querySelector(".contrast-ratio-par");
 
 const colorsContainer = document.querySelectorAll('.colors-container');
 
@@ -446,6 +447,18 @@ sliderBackgroundHexBlue.addEventListener('input', () => {
 
 infoButton.addEventListener("click", () => {
   overlay.classList.add("active");
+  let dynamicColorArray = getDynamicColorArray();
+  let contrastRatio = parseFloat(getContrastRatio(...dynamicColorArray));
+  contrastRatioPar.innerText = contrastRatio;
+  if(contrastRatio >= 7) {
+    contrastRatioPar.innerText += ". Tutti i test passati."
+  } else if(contrastRatio >= 4.5) {
+    contrastRatioPar.innerText += " Test AA enhanced fallito. Tutti gli altri test passati."
+  } else if(contrastRatio >= 3) {
+    contrastRatioPar.innerText += " Test AA enhanced fallito. Test AAA minimal fallito. Test AA minimal passato."
+  } else {
+    contrastRatioPar.innerText += " Tutti i test falliti."
+  }
 })
 
 closeButton.addEventListener("click", () => {
