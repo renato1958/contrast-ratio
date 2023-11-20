@@ -9,6 +9,7 @@ const positionContext = document.querySelector('.position-context');
 const expandButton = document.querySelectorAll('.expand-button');
 
 const infoButton = document.querySelector(".info-button");
+const closeButton = document.querySelector(".close-button");
 const overlay = document.querySelector(".overlay");
 
 const colorsContainer = document.querySelectorAll('.colors-container');
@@ -445,4 +446,8 @@ sliderBackgroundHexBlue.addEventListener('input', () => {
 
 infoButton.addEventListener("click", () => {
   overlay.classList.add("active");
+})
+
+closeButton.addEventListener("click", () => {
+  overlay.classList.remove("active");
 })
