@@ -310,3 +310,19 @@ body {
 .overlay.active {
   transform: translateY(0);
 }
+
+.close-button {
+  font-size: 40px;
+  align-self: end;
+  margin: 15px 15px 0 auto;
+  cursor: pointer;
+  color: #bbb;
+}
+
+@media(hover: hover) {
+  .close-button:hover,
+  .close-button:active {
+    color: #999;
+  }
+}
+
