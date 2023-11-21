@@ -326,3 +326,70 @@ body {
   }
 }
 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+.table-wrapper:nth-of-type(1) {
+  margin-top: 10%;
+}
+
+@media only screen and (min-width: 37.5rem) {
+  .table-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+table {
+  color: #bbb;
+  padding: 5px;
+  width: 100%;
+}
+
+th {
+  text-align: center;
+  background-color: rgba(255, 85, 0, 0.75);
+  color: #232323;
+  padding: 6px 0 6px 0;
+}
+
+tbody td {
+  padding: 10px;
+}
+
+td:nth-of-type(1) {
+  width: 75%;
+  text-align: left;
+}
+
+td:nth-of-type(2) {
+  text-align: right;
+}
+
+.cr {
+  display: block;
+  width: 150px;
+  padding: 4px 0 4px 0;
+  border-radius: 10% / 50%;
+  color: white;
+  text-align: center;
+}
+
+.pass {
+  background-color: green;
+}
+
+.pass::after {
+  content: "Pass";
+}
+
+.fail {
+  background-color: red;
+}
+
+.fail::after {
+  content: "Fail"
+}
