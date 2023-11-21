@@ -11,7 +11,13 @@ const expandButton = document.querySelectorAll('.expand-button');
 const infoButton = document.querySelector(".info-button");
 const closeButton = document.querySelector(".close-button");
 const overlay = document.querySelector(".overlay");
-const contrastRatioPar = document.querySelector(".contrast-ratio-par");
+
+const cr = document.querySelectorAll(".cr");
+const stAA = document.querySelector(".st-aa");
+const stAAA = document.querySelector(".st-aaa");
+const ltAA = document.querySelector(".lt-aa");
+const ltAAA = document.querySelector(".lt-aaa");
+const guiAA = document.querySelector(".gui-aa");
 
 const colorsContainer = document.querySelectorAll('.colors-container');
 
@@ -449,18 +455,48 @@ infoButton.addEventListener("click", () => {
   overlay.classList.add("active");
   let dynamicColorArray = getDynamicColorArray();
   let contrastRatio = parseFloat(getContrastRatio(...dynamicColorArray));
-  contrastRatioPar.innerText = contrastRatio;
+
   if(contrastRatio >= 7) {
-    contrastRatioPar.innerText += ". Tutti i test passati."
+    for(let i = 0; i < cr.length; i++) {
+      cr[i].classList.remove("fail");
+      cr[i].classList.add("pass");
+    }  
   } else if(contrastRatio >= 4.5) {
-    contrastRatioPar.innerText += " Test AA enhanced fallito. Tutti gli altri test passati."
+    stAA.classList.remove("fail");
+    stAA.classList.add("pass");
+    stAAA.classList.remove("pass");
+    stAAA.classList.add("fail");
+    ltAA.classList.remove("fail");
+    ltAA.classList.add("pass");
+    ltAAA.classList.remove("fail");
+    ltAAA.classList.add("pass");
+    guiAA.classList.remove("fail");
+    guiAA.classList.add("pass");
   } else if(contrastRatio >= 3) {
-    contrastRatioPar.innerText += " Test AA enhanced fallito. Test AAA minimal fallito. Test AA minimal passato."
+    stAA.classList.remove("pass");
+    stAA.classList.add("fail");
+    stAAA.classList.remove("pass");
+    stAAA.classList.add("fail");
+    ltAA.classList.remove("fail");
+    ltAA.classList.add("pass");
+    ltAAA.classList.remove("pass");
+    ltAAA.classList.add("fail");
+    guiAA.classList.remove("fail");
+    guiAA.classList.add("pass");
   } else {
-    contrastRatioPar.innerText += " Tutti i test falliti."
+    stAA.classList.remove("pass");
+    stAA.classList.add("fail");
+    stAAA.classList.remove("pass");
+    stAAA.classList.add("fail");
+    ltAA.classList.remove("pass");
+    ltAA.classList.add("fail");
+    ltAAA.classList.remove("pass");
+    ltAAA.classList.add("fail");
+    guiAA.classList.remove("pass");
+    guiAA.classList.add("fail");
   }
-})
+});
 
 closeButton.addEventListener("click", () => {
   overlay.classList.remove("active");
-})
+});
